@@ -241,29 +241,6 @@
     .lang-menu { right:0; left:auto; }
     .contact-row { flex-direction:column; }
   }
-
-  #backToTop {
-    position:fixed;
-    bottom:24px;
-    right:24px;
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    background:#5fc9c9;
-    color:#fff;
-    border:none;
-    font-size:24px;
-    font-weight:700;
-    cursor:pointer;
-    box-shadow:0 4px 14px rgba(0,0,0,0.25);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:999;
-    transition:opacity 0.2s ease, transform 0.2s ease;
-  }
-  #backToTop.show { display:flex; }
-  #backToTop:hover { transform:translateY(-3px); }
 </style>
 </head>
 <body>
@@ -653,8 +630,6 @@ machine learning, Python, R, SQL et C++. À la recherche d'un stage de 3 à 6 mo
   <div class="copyright">Created by Nguyen Duc Hoang Viet</div>
 </footer>
 
-<button id="backToTop" onclick="scrollToTop()" aria-label="Back to top">↑</button>
-
 <script>
 function sendContact(e) {
   e.preventDefault();
@@ -723,18 +698,6 @@ function setLang(lang) {
 document.addEventListener('click', function(e) {
   if (!document.getElementById('langSelect').contains(e.target)) {
     document.getElementById('langMenu').classList.remove('open');
-  }
-});
-
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-var backToTopBtn = document.getElementById('backToTop');
-window.addEventListener('scroll', function() {
-  if (window.scrollY > 300) {
-    backToTopBtn.classList.add('show');
-  } else {
-    backToTopBtn.classList.remove('show');
   }
 });
 </script>
